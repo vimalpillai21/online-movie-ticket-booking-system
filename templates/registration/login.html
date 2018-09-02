@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<div class="col-sm-offset-3 col-sm-6">
+<div class="panel panel-default" id="log1">
+<div class="panel-heading" id="log2">
+<h3><p id="log3"><center><bold>LogIn</bold></center></p></h3>
+</div>
+<div class="panel-body">
+{% if next %}
+    {% if user.is_authenticated %}
+    <p>Your Account doesn't have access to this page. To proceed, please
+    login with an account that has access.</p>
+    {% endif %}
+{% endif %}
+<form method="POST" action="{% url 'login' %}">
+{% csrf_token %}
+<br />
+<div class="row">
+<div class="col-sm-offset-3 col-sm-1">
+{{ form.username.label_tag }}
+</div>
+<div class="col-sm-1">
+</div>
+<div class="col-sm-4">
+{{ form.username }}
+</div>
+</div>
+<br /><br />
+<div class="row">
+<div class="col-sm-offset-3 col-sm-1">
+{{ form.password.label_tag }}
+</div>
+<div class="col-sm-1">
+</div>
+<div class="col-sm-4">
+{{ form.password }}
+</div>
+</div>
+<br />
+{% if form.errors %}
+<p align="center" class="text-danger">Your Username and Password didn't match. Please try again</p>
+{% endif %}
+<br />
+<div class="row">
+<div class="col-sm-offset-6">
+<input type="submit" class="btn btn-primary btn-lg" value="login">
+</div>
+</div>
+<input type="hidden" name="next" value="{{ next }}">
+</form>
+</div>
+</div>
+</div>
+{% endblock %}  

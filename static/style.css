@@ -1,0 +1,100 @@
+div.Platinum, div.Gold, div.Silver{
+	width: 2.5em;
+	border-top: 5px solid black;
+	border-left: 2px solid black;
+	border-right: 2px solid black;
+	margin: 5px;
+	text-align: center;
+}
+
+div.Platinum a, div.Gold a, div.Silver a{
+	color: black;
+	text-decoration: none;
+}
+
+div.seatDiv{
+	width: 80%;
+}
+div.seatArray{
+	width: 80%;
+	height: 50%;
+	float: left;
+}
+div.seatForm{
+	width: 20%;
+	float: right;
+}
+
+div.selectable{
+	border-top: 5px solid green!important;
+	border-left: 2px solid green!important;
+	border-right: 2px solid green!important;
+}
+
+div.selectable a{
+	color: green!important;
+	cursor: pointer!important;
+}
+
+div.selected{
+	border-top: 3px solid blue!important;
+	border-left: 1px solid blue!important;
+	border-right: 1px solid blue!important;
+}
+
+div.selected a{
+	color: blue!important;
+	cursor: pointer!important;
+}
+
+/*START: override bootsrtap styles*/
+
+.navbar-static-top{
+	z-index: 99!important;
+}
+
+.ui-widget-overlay{
+	background-color: black!important;
+	opacity:0.5!important;
+}
+
+.thumbnail img { 
+	min-height:250px; 
+	height:250px!important;
+	width:350px!important; 
+}
+
+.carousel-img {
+	min-height:80vh; 
+	height:80vh!important;
+	width:100vw!important; 	
+}
+
+div#myCarousel {
+	height:70vh;
+	width:80vw;
+	margin-left:10vw;
+	margin-right:10vw;
+	margin-bottom:12vh;
+}
+
+ol.carousel-indicators {
+	top:75vh!important;
+}
+
+div.carousel-caption {
+	background-color: rgba(0,0,0,0.4);
+}
+
+.media-left img {
+	width:120px!important;
+	height:120px!important;
+}
+
+/*END: override bootsrtap styles*/
+
+.forms{
+	background-color: #f2f2f2;
+	padding:10px;
+	margin:5px;
+}

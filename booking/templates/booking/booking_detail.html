@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block title %}
+    BoxOffice | Booking
+{% endblock %}
+
+{% block content %}
+    <h2>Booking Details</h2>
+    <hr /><br /><br />
+    <font size=4>
+    <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+    <label>Booking ID :- </label>
+    </div>
+    <div class="col-sm-8">
+    {{ object.id }}
+    </div>
+    </div>
+    <br /><br />
+    <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+    <label>Date & Time :- </label>
+    </div>
+    <div class="col-sm-8">
+    {{ object.timestamp }}
+    </div>
+    </div>
+    <br /><br />
+    <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+    <label>Payment Type :- </label>
+    </div>
+    <div class="col-sm-8">
+    {{ object.payment_type }}
+    </div>
+    </div>
+    <br /><br />
+    <div class="row">
+    <div class="col-sm-offset-2 col-sm-2">
+    <label>Paid Amount :- </label>
+    </div>
+    <div class="col-sm-8">
+    {{ object.paid_amount }}
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-offset-2 col-sm-8">
+    <center>
+    <a href="{% url 'booking:delete' btid=object.id %}" class="btn btn-danger">Delete</a>
+    </center>
+    </div>
+    </div>
+    </font>
+{% endblock %}

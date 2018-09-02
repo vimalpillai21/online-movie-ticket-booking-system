@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+
+{% block title %}
+    BoxOffice | Payment
+{% endblock %}
+
+{% block content %}
+
+	<h1>Payment</h1><hr />
+	<div class="jumbotron" style="background-color:#add8e6">	
+	<div class="booking">
+		<form method="post" action="{% url 'booking:payment_confirmation' %}">
+			{% csrf_token %}
+			<input type="hidden" id="show_id" name="show_id" value="{{ show.id }}">
+			<!--<pre>-->
+			<div class="row">
+			<div class="col-sm-offset-3 col-sm-1">
+			<label>Movie:</label>
+			</div>
+			<div class="col-sm-4">
+			<input id="movie" class="form form-control" name="movie" value="{{ show.movie }}" readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-sm-offset-3 col-sm-1">
+            <label>Theatre:</label>
+            </div>
+            <div class="col-sm-4">
+            <input id="theatre" class="form form-control" name="theatre" value="{{ show.theatre }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-sm-offset-3 col-sm-1">
+            <label>Screen No:</label>
+            </div>
+            <div class="col-sm-4">
+            <input id="screen" class="form form-control" name="screen" value="{{ show.screen }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+            <div class="col-sm-offset-3 col-sm-1">
+			<label>Showtime:</label>
+			</div>
+			<div class="col-sm-4">
+			<input id="showtime" class="form form-control"  name="showtime" value="{{ show.time }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+            <div class="col-sm-offset-3 col-sm-1">
+            <label>Date:</label>
+            </div>
+            <div class="col-sm-4">
+            <input id="date" class="form form-control" name="date" value="{{ show.date }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+            <div class="col-sm-offset-3 col-sm-1">
+			<label>Seats:</label>
+			</div>
+			<div class="col-sm-4">
+			<input id="selected_seat" class="form form-control" name="selected_seat" value="{{ seats }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+            <div class="col-sm-offset-3 col-sm-1">
+			<label>Seat Type:</label>
+			</div>
+			<div class="col-sm-4">
+			<input id="seat_type" class="form form-control" name="seat_type" value="{{ seat_type }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+            <div class="col-sm-offset-3 col-sm-1">
+            <label>Payable Amount:</label>
+            </div>
+            <div class="col-sm-4">
+            <input id="amount" class="form form-control" name="amount" value="{{ ticket_price }}"  readonly><br /><br />
+			</div>
+			</div>
+			<div class="row">
+			<div class="col-sm-offset-5 col-sm-7">
+			{{ form.as_p }}
+			</div>
+			</div>
+			<div class="row">
+            <div class="col-sm-offset-5 col-sm-7">
+			<button class="btn btn-primary btn-lg" type="submit">Pay</button>
+			</div>
+			</div>
+			<!--</pre>-->
+		</form>
+	</div>
+	</div>
+
+{% endblock %}

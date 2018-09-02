@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+BoxOffice|Theatres
+{% endblock %}
+
+{% block content %}
+
+    
+    {% for category in theatres %}
+    <div class="jumbotron" id="{{ category.0.city }}-theatres" style="background-color:#FFE4B5">
+        <div class="text-center">
+            <h2>Theatres in {{ category.0.city }}</h2>
+        </div>
+        <ul>
+            {% for theatre in category %}
+            
+            <li style="font-size:20px">
+            <a href="{{ theatre.get_absolute_url }}">{{ theatre.name }} | {{ theatre.address }}</a>
+            </li>
+            
+            {% endfor %}
+        </ul>
+    </div>
+    {% endfor %}
+
+{% endblock %}

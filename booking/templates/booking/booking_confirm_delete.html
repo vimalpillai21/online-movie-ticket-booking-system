@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}
+    BoxOffice | Delete
+{% endblock %}
+
+{% block content %}
+    
+    <form action=""  method="POST">{% csrf_token %}
+    <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+    <div class="row">
+    <div class="col-sm-offset-3 col-sm-6">
+    <p class="text-warning" style="font-size:25px">Are you sure you want to delete"{{ object }}"?</p>
+    </div>
+    </div>
+    <div class="row">
+    <div class="col-sm-offset-5 col-sm-6">
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="submit" class="btn btn-danger" value="Confirm" />
+    </div>
+    </div>
+    </form>
+    
+{% endblock %}
