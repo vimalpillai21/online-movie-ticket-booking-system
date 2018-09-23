@@ -5,11 +5,11 @@ from django.conf import settings
 from django.contrib.auth.views import LoginView, LogoutView
 from django.conf.urls.static import static
 from django.conf.urls import url,include
-from home.views import ShowIndex, RegisterView
-from home.forms import LoginForm
+from home.views import ShowIndex, RegisterView, LoginView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'^login/$',LoginView.as_view(authentication_form=LoginForm),name = 'login'),
+    url(r'^login/$',LoginView.as_view(),name = 'login'),
     url(r'^logout/$',LogoutView.as_view(),name = 'logout'),
     url(r'^$', ShowIndex.as_view()),
     url(r'^movies/', include('movie.urls',namespace='movie')),

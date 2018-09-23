@@ -19,12 +19,12 @@
 <br />
 <div class="row">
 <div class="col-sm-offset-3 col-sm-1">
-{{ form.username.label_tag }}
+{{ form.email.label_tag }}
 </div>
 <div class="col-sm-1">
 </div>
 <div class="col-sm-4">
-{{ form.username }}
+{{ form.email }}
 </div>
 </div>
 <br /><br />
@@ -39,7 +39,7 @@
 </div>
 </div>
 <br />
-{% if form.errors %}
+{% if form.non_field_errors %}
 <p align="center" class="text-danger">Your Username and Password didn't match. Please try again</p>
 {% endif %}
 <br />

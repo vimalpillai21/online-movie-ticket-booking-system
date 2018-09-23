@@ -6,11 +6,6 @@
 <form method="POST" action="{% url 'register' %}">
 {% csrf_token %}
 <div class="fieldWrapper">
-{{ form.username.errors }}
-                <label for="{{ form.username.id_for_label }}">Username: </label>
-                {{ form.username }}
-</div><br />
-<div class="fieldWrapper">
 {{ form.email.errors }}
                 <label for="{{ form.email.id_for_label }}">Email: </label>
                 {{ form.email }}
