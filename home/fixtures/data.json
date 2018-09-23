@@ -1,0 +1,173 @@
+[
+{
+    "model": "movie.movie",
+    "pk": 10,
+    "fields": {
+        "name": "Venom",
+        "cast": "Tom Hardy, Michelle Williams",
+        "director": "Ruben Fleischer",
+        "language": "ENGLISH",
+        "run_length": 150,
+        "certificate": "UA",
+        "popularity_index": 11,
+        "trailer": "https://www.youtube.com/embed/xLCn88bfW1o",
+        "image": "venom_superhero_movie_tom_hardy-wallpaper-1280x720.jpg"
+    }
+},
+{
+    "model": "movie.movie",
+    "pk": 11,
+    "fields": {
+        "name": "Avengers InfinityWar",
+        "cast": "Chris Hemsworth, Mark Ruffalo",
+        "director": "Anthony Russo",
+        "language": "ENGLISH",
+        "run_length": 149,
+        "certificate": "UA",
+        "popularity_index": 2,
+        "trailer": "https://www.youtube.com/embed/6ZfuNTqbHE8",
+        "image": "avengers_infinity_war_2018_movie_fan_art-wallpaper-1280x720.jpg"
+    }
+},
+{
+    "model": "movie.movie",
+    "pk": 12,
+    "fields": {
+        "name": "Black Panther",
+        "cast": "Chadwick Boseman, Michael B Jordan",
+        "director": "Ryan Coogler",
+        "language": "ENGLISH",
+        "run_length": 134,
+        "certificate": "UA",
+        "popularity_index": -2,
+        "trailer": "https://www.youtube.com/embed/xjDjIWPwcPU",
+        "image": "captain_america_civil_war_black_panther-wallpaper-1280x720.jpg"
+    }
+},
+{
+    "model": "movie.movie",
+    "pk": 13,
+    "fields": {
+        "name": "Shazam",
+        "cast": "Zachary Levi, Mark Strong",
+        "director": "David F Sandberg",
+        "language": "ENGLISH",
+        "run_length": 149,
+        "certificate": "UA",
+        "popularity_index": 5,
+        "trailer": "https://www.youtube.com/embed/go6GEIrcvFY",
+        "image": "shazam-2019-4j-1280x720.jpg"
+    }
+},
+{
+    "model": "movie.movie",
+    "pk": 14,
+    "fields": {
+        "name": "AquaMan",
+        "cast": "Jason Momoa, Amber Heard",
+        "director": "James Wan",
+        "language": "ENGLISH",
+        "run_length": 148,
+        "certificate": "UA",
+        "popularity_index": 3,
+        "trailer": "https://www.youtube.com/embed/WDkg3h8PCVU",
+        "image": "aquaman_in_justice_league-wallpaper-1280x720.jpg"
+    }
+},
+{
+    "model": "movie.movie",
+    "pk": 15,
+    "fields": {
+        "name": "Vimaanam",
+        "cast": "Prithviraj Sukumaran, Durga Krishna",
+        "director": "Pradeep M Nair",
+        "language": "MALAYALAM",
+        "run_length": 147,
+        "certificate": "U",
+        "popularity_index": 6,
+        "trailer": "https://www.youtube.com/embed/qADtE8hwlkA",
+        "image": "6e4c9a46586277.585a697fc8756.jpg"
+    }
+},
+{
+    "model": "movie.movie",
+    "pk": 16,
+    "fields": {
+        "name": "Dhadak",
+        "cast": "Janhvi Kapoor, Ishaan Khattar",
+        "director": "Shashank Khaitan",
+        "language": "HINDI",
+        "run_length": 138,
+        "certificate": "U",
+        "popularity_index": 4,
+        "trailer": "https://www.youtube.com/embed/TIE92mUvSsw",
+        "image": "Dhadak-Poster.jpg"
+    }
+},
+{
+    "model": "theatre.theatre",
+    "pk": 1,
+    "fields": {
+        "name": "PVR",
+        "city": "DELHI",
+        "address": "Kotla",
+        "no_of_screen": 3,
+        "admin_id": 1
+    }
+},
+{
+    "model": "theatre.theatre",
+    "pk": 2,
+    "fields": {
+        "name": "Cassandra",
+        "city": "KOLKATA",
+        "address": "bengal",
+        "no_of_screen": 2,
+        "admin_id": 1
+    }
+},
+{
+    "model": "theatre.theatre",
+    "pk": 3,
+    "fields": {
+        "name": "Mall Theatre",
+        "city": "MUMBAI",
+        "address": "Marine Drive",
+        "no_of_screen": 1,
+        "admin_id": 1
+    }
+},
+{
+    "model": "theatre.theatre",
+    "pk": 4,
+    "fields": {
+        "name": "KFC",
+        "city": "DELHI",
+        "address": "Marine Drive",
+        "no_of_screen": 2,
+        "admin_id": 1
+    }
+},
+{
+    "model": "theatre.show",
+    "pk": 3,
+    "fields": {
+        "movie": 10,
+        "theatre": 1,
+        "screen": 2,
+        "date": "2018-09-22",
+        "time": "07:42:11"
+    }
+},
+{
+    "model": "theatre.show",
+    "pk": 4,
+    "fields": {
+        "movie": 11,
+        "theatre": 1,
+        "screen": 2,
+        "date": "2018-09-22",
+        "time": "07:42:36"
+    }
+}
+]
