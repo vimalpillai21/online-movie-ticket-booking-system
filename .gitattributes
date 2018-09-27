@@ -1,0 +1,5 @@
+media_cdn/* linguist-detectable=false
+static/* linguist-detectable=false
+templates/* linguist-detectable=false
+movie/templates/* linguist-detectable=false
+theatre/templates/* linguist-detectable=false
