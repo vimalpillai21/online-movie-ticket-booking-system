@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.core.exceptions import ValidationError
-from django.views.generic import View, CreateView, FormView
+from django.views.generic import View, CreateView, FormView, ListView
 from movie.models import Movie
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, get_user_model
@@ -16,6 +16,25 @@ class ShowIndex(View):
         top_movie  = Movie.objects.all().order_by('popularity_index')[:3]
         context = {'movie_list':movie_list,'top_movie':top_movie}
         return render(request,'home.html',context)
+
+class SearchView(ListView):
+    template_name = 'search.html'
+    
+    def get_context_data(self,*args, **kwargs):
+        context = super(SearchView,self).get_context_data(*args,**kwargs)
+        query = self.request.GET.get('q')
+        context['query'] = query
+        return context
+    
+    def get_queryset(self,*args,**kwargs):
+        request = self.request
+        print(request.GET)
+        query = request.GET.get('q')
+        if query is not None:
+            query = query.strip()
+            return Movie.objects.search(query)
+        else:
+            return Movie.objects.all()
 
 class RegisterView(CreateView):
     form_class = RegisterForm

@@ -45,12 +45,46 @@
             {% endif %}
             
           </ul>
+          <div style="margin-right:5px;">
+            <form class="navbar-form navbar-right search-form" role="search" action="{% url 'search' %}">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search">
+              <span class="input-group-btn input-group-sm">
+                <button type="submit" class="btn btn-default">Search</button>
+              </span>
+            </div>  
+            </form>
+          </div>
         </div>
       </div>
     </nav>
+    <script type="text/javascript">
+    function performSearch(searchInput)
+    {
+        var query = searchInput.val();
+        window.location.href='/search/?q='+query;
+    }
 
-        
+  $(document).ready(function(){
 
+    var searchForm = $('.search-form');
+    console.log(searchForm)
+    var searchInput = searchForm.find("[name='q']");
+    console.log(searchInput)
+    var typingTimer;
+    var typingInterval = 10;
+    console.log("hello")
+    searchInput.keyup(function(event){
+        clearTimeout(typingTimer);
+        console.log(searchInput.val())
+        typingTimer = setTimeout(performSearch(searchInput),typingInterval);
+    });
+    searchInput.keydown(function(event){
+        clearTimeout(typingTimer);
+       
+    });
+  });
+</script>
 <div id="content" class="container-fluid">
     {% block content %}
     {% endblock %}

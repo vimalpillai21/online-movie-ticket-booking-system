@@ -1,6 +1,24 @@
 from django.db import models
+from django.db.models import Q
 from django.urls.base import reverse
 # Create your models here.
+class MovieQuerySet(models.query.QuerySet):
+    def search(self,query):
+        lookup = (
+            Q(name__icontains=query)|
+            Q(director__icontains=query)|
+            Q(language__icontains=query)|
+            Q(cast__icontains=query)
+        )
+        return self.filter(lookup).distinct()
+
+class MovieManager(models.Manager):
+    def get_queryset(self):
+        return MovieQuerySet(self.model,self._db)
+    def search(self,query):
+        return self.get_queryset().search(query)
+
+
 class Movie(models.Model):
     lang_choice=(
             ('ENGLISH','English'),
@@ -28,6 +46,8 @@ class Movie(models.Model):
     trailer           =     models.URLField(blank=True)    
     image             =     models.ImageField(null=True, blank=True)
     
+    objects = MovieManager()
+
     def get_absolute_url(self):
         return reverse('movie:detail',kwargs={'movie_id':self.pk})
     

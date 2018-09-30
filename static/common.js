@@ -39,7 +39,6 @@ function createSeatArray() {
 
 $(document).ready(function(){
 
-
     //create seat array
     $('.seatArray').append(createSeatArray());
 
