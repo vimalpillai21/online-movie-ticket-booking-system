@@ -59,12 +59,8 @@
       </div>
     </nav>
     <script type="text/javascript">
-    function performSearch(searchInput)
-    {
-        var query = searchInput.val();
-        window.location.href='/search/?q='+query;
-    }
-
+ 
+  
   $(document).ready(function(){
 
     var searchForm = $('.search-form');
@@ -72,12 +68,16 @@
     var searchInput = searchForm.find("[name='q']");
     console.log(searchInput)
     var typingTimer;
-    var typingInterval = 10;
+    var typingInterval = 500;
     console.log("hello")
     searchInput.keyup(function(event){
         clearTimeout(typingTimer);
         console.log(searchInput.val())
-        typingTimer = setTimeout(performSearch(searchInput),typingInterval);
+        typingTimer = setTimeout(function(){
+          console.log("Hello w")
+        var query = searchInput.val();
+        window.location.href='/search/?q='+query;
+    },typingInterval,searchInput);
     });
     searchInput.keydown(function(event){
         clearTimeout(typingTimer);
