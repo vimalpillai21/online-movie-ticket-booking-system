@@ -12,6 +12,8 @@ This project contains following apps:-
   3. booking app
   4. home app
  
+ In this project custom user model has been used rather than default user model.
+
  There are list and detail views of theatre, movie etc. 
  Movie list view displays the movie.
  Theatre list view displays all the theatres in a city.
